@@ -389,7 +389,8 @@ class Content extends React.Component {
    * @return {Boolean}
    */
 
-  isInEditor = target => {
+  // [CC] Allow clients to override isContentEditable requirement
+  isInEditor = (target, isContentEditableRequired = true) => {
     let el
 
     try {
@@ -415,7 +416,7 @@ class Content extends React.Component {
     }
 
     return (
-      el.isContentEditable &&
+      (el.isContentEditable || !isContentEditableRequired) && // [CC]
       (el === this.ref.current ||
         el.closest(SELECTORS.EDITOR) === this.ref.current)
     )
@@ -512,7 +513,15 @@ class Content extends React.Component {
       handler === 'onPaste' ||
       handler === 'onSelect'
     ) {
-      if (!this.isInEditor(event.target)) {
+      // [CC] Don't require `isContentEditable` in `isInEditor` for clipboard
+      const isContentEditableRequired = ![
+        'onCopy',
+        'onCut',
+        'onPaste',
+      ].includes(handler) // [/CC]
+
+      // [CC] Don't require `isContentEditable` in `isInEditor` for clipboard
+      if (!this.isInEditor(event.target, isContentEditableRequired)) {
         return
       }
     }

@@ -69,7 +69,15 @@ function cloneFragment(event, editor, callback = () => undefined) {
   // attaching it to empty `<div>/<span>` nodes will end up having it erased by
   // most browsers. (2018/04/27)
   if (startVoid) {
-    attach = contents.childNodes[0].childNodes[1].firstChild
+    attach =
+      // [CC] The original slate code in the subsequent line assumes that the
+      // void "content" node is in a specific location in the DOM relative to
+      // the selected contents. This assumption is incorrect in the case of
+      // our void nodes like images and chips. Rather than hard-code another
+      // relationship, we require clients to add the `cc-slate-void` class to
+      // the void "content" node so it's easy to find.
+      contents.querySelector('.cc-slate-void') || // [/CC]
+      contents.childNodes[0].childNodes[1].firstChild
   }
 
   // Remove any zero-width space spans from the cloned DOM so that they don't
