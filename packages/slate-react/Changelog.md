@@ -4,6 +4,9 @@ This document maintains a list of changes to the `slate-react` package with each
 
 ---
 
+### `0.22.10-cc.5` — July 6, 2022
+
+Replace dependency `slate-react-placeholder` with dependency `@concord-consortium/slate-react-placeholder` with updated `peerDependencies`.
 ### `0.22.10-cc.2` — July 16, 2020
 
 ###### FIXED
