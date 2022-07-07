@@ -4,6 +4,10 @@ This document maintains a list of changes to the `slate-react-placeholder` packa
 
 ---
 
+### `0.2.9-cc.1` — July 6, 2022
+
+Updated `peerDependencies`
+
 ### `0.2.0` — May 8, 2019
 
 ###### BREAKING
