@@ -597,7 +597,8 @@ class Content extends React.Component {
       // COMPAT: In iOS, a formatting menu with bold, italic and underline
       // buttons is shown which causes our internal value to get out of sync in
       // weird ways. This hides that. (2016/06/21)
-      ...((readOnly || (!IS_IOS && !IS_SAFARI)) ? {} : { WebkitUserModify: 'read-write' }),
+      ...((readOnly || (!IS_IOS && !IS_SAFARI)) ? {} : { WebkitUserModify: 'read-write-plaintext-only' }),
+      // [CC] https://github.com/ianstormtaylor/slate/issues/5110#issuecomment-1236831747
       // Allow for passed-in styles to override anything.
       ...props.style,
     }
