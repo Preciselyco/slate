@@ -1,7 +1,7 @@
 {
   "name": "@concord-consortium/slate-react",
   "description": "A set of React components for building completely customizable rich-text editors.",
-  "version": "0.22.10-cc.5",
+  "version": "0.22.10-cc.6",
   "license": "MIT",
   "repository": "https://github.com/concord-consortium/slate",
   "main": "lib/slate-react.js",
@@ -44,7 +44,9 @@
     "slate-hyperscript": "^0.13.9"
   },
   "scripts": {
-    "clean": "rm -rf ./dist ./lib ./node_modules"
+    "clean": "rm -rf ./dist ./lib ./node_modules",
+    "publish:cc:dry-run": "npm publish --dry-run --access=public",
+    "publish:cc": "npm publish --access=public"
   },
   "umdGlobals": {
     "immutable": "Immutable",
