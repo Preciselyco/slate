@@ -1,7 +1,7 @@
 import Debug from 'debug'
 
 import { IS_ANDROID } from 'slate-dev-environment'
-import PlaceholderPlugin from 'slate-react-placeholder'
+import PlaceholderPlugin from '@concord-consortium/slate-react-placeholder'
 import EditorPropsPlugin from './editor-props'
 import RenderingPlugin from './rendering'
 import CommandsPlugin from './commands'

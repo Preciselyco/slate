@@ -1,4 +1,4 @@
-import { Editor } from 'slate-react'
+import { Editor } from '@concord-consortium/slate-react'
 import { Block, Value } from 'slate'
 
 import React from 'react'
