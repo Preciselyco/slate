@@ -1,5 +1,5 @@
-import { Editor } from 'slate-react'
-import PlaceholderPlugin from 'slate-react-placeholder'
+import { Editor } from '@concord-consortium/slate-react'
+import PlaceholderPlugin from '@concord-consortium/slate-react-placeholder'
 import { Value } from 'slate'
 import initialValue from './value.json'
 

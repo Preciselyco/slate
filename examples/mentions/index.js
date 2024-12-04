@@ -20,7 +20,7 @@ The list of characters was extracted from Wikipedia:
 https://en.wikipedia.org/wiki/List_of_Star_Wars_characters
 */
 
-import { Editor } from 'slate-react'
+import { Editor } from '@concord-consortium/slate-react'
 import { Value } from 'slate'
 import React from 'react'
 
